@@ -39,6 +39,7 @@ int main()
         }
     }
     int tochka = 0;
+    int count = 0;
     bool trueDigit = true;
 
     for (int i = 1; i < number.length() && trueDigit; i++) {// цикл проверяет отсутствие буквенных символов
@@ -54,16 +55,14 @@ int main()
             
         }
     }
-    int count = 0;
-    for (int i = 1; i < number.length() && trueDigit; i++) {
+    for (int i = 0; i < number.length() && trueDigit; i++) {
         if (number[i] > '0' && number[i] < '9') {
             count++;
         }
-        else {
-            trueDigit = false;
-        }
+        
+        
     }
-
+    
     for (int i = 1; i < number.length() && trueDigit ; i++) {//цикл проверяет количество точек в числе
         if (number[i] == '.') {
                 tochka++;
@@ -75,7 +74,7 @@ int main()
             break;
         }
     }
-    if (trueDigit == true) {
+    if (count > 0 && trueDigit == true) {
         std::cout << "Yes F\n";
     }
     else {
