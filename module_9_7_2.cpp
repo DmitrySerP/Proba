@@ -33,7 +33,7 @@ int main()
             break;
         }
         else {
-            std::cout << "Input is not correct!\n";
+            std::cout << "Input is error!\n";
             std::cout << "Input the number: ";
             std::cin >> number;
         }
@@ -42,43 +42,25 @@ int main()
     int count = 0;
     bool trueDigit = true;
 
-    for (int i = 1; i < number.length() && trueDigit; i++) {// цикл проверяет отсутствие буквенных символов
-        if ((number[i] > '0' && number[i] < '9') || number[i] == '.') {
-
-            //std::cout << "Yes d\n";
-
+    for (int i = 1; i < number.length() && trueDigit; i++) {
+        if ((number[i] >= '0' && number[i] <= '9') || number[i] == '.') {
         }
         else {
             trueDigit = false;
-            //std::cout << "No d\n";
             break;
-            
         }
-    }
-    for (int i = 0; i < number.length() && trueDigit; i++) {
-        if (number[i] > '0' && number[i] < '9') {
+        if (number[i] >= '0' && number[i] <= '9') {
             count++;
         }
-        
-        
-    }
-    
-    for (int i = 1; i < number.length() && trueDigit ; i++) {//цикл проверяет количество точек в числе
         if (number[i] == '.') {
                 tochka++;
         }
-    
-        if (tochka == 2) {// точка в числе может быть одна
-            trueDigit = false;
-           // std::cout << "No t\n";
-            break;
-        }
     }
-    if (count > 0 && trueDigit == true) {
-        std::cout << "Yes F\n";
+    if (count > 0 && tochka <=1 && trueDigit == true) {
+        std::cout << "Yes \n";
     }
     else {
-        std::cout << "No E\n";
+        std::cout << "No \n";
     }
 
 
